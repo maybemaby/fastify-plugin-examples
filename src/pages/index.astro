@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon";
 import PluginPreview from "../components/PluginPreview.astro";
 import Layout from "../layouts/Default.astro";
 import type { PluginFrontMatter } from "../lib/types";
@@ -7,7 +8,17 @@ const plugins = await Astro.glob<PluginFrontMatter>("./plugins/*.md");
 ---
 
 <Layout>
-  <div class="mb-10 text-lg flex flex-row items-center">Filter</div>
+  <div
+    class="mb-10 text-lg flex flex-row items-center w-full bg-zinc-200 dark:bg-slate-600 px-4 py-2 rounded-lg"
+  >
+    Filter
+    <button
+      class="mx-10 bg-zinc-100 hover:bg-zinc-50 dark:bg-slate-700 dark:hover:bg-slate-800 px-3 w-[130px] flex justify-between items-center rounded-md"
+    >
+      Tags
+      <Icon pack="tabler" name="chevron-down" class="h-8" />
+    </button>
+  </div>
   <section
     id="plugins"
     class="flex flex-col items-center sm:flex-row flex-wrap gap-4"

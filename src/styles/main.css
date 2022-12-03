@@ -16,15 +16,19 @@
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     height: 100%;
     overflow: auto;
-    @apply dark:bg-slate-800 dark:text-zinc-100 bg-slate-200;
+    @apply dark:bg-slate-800 dark:text-zinc-100 bg-slate-100;
   }
 
   h1 {
-    @apply text-4xl font-semibold;
+    @apply text-2xl sm:text-4xl font-semibold;
   }
 
   h2 {
     @apply text-2xl font-bold
+  }
+
+  code.il {
+    @apply px-1 rounded-sm dark:bg-slate-600 bg-slate-300 py-0.5
   }
 }
 
