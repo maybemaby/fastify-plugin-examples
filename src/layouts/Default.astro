@@ -1,0 +1,25 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/main.css";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="A library of Fastify plugin code examples."
+    />
+    <title>Fastify Plugin Examples</title>
+  </head>
+  <body>
+    <Header />
+    <main class="mx-10 lg:mx-24">
+      <slot />
+    </main>
+  </body>
+</html>
