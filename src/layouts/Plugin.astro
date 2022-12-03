@@ -1,6 +1,9 @@
 ---
 import Header from "../components/Header.astro";
+import type { PluginFrontMatter } from "../lib/types";
 import "../styles/main.css";
+
+const { frontmatter } = Astro.props as { frontmatter: PluginFrontMatter };
 ---
 
 <!DOCTYPE html>
@@ -18,7 +21,15 @@ import "../styles/main.css";
   </head>
   <body>
     <Header />
-    <main class="mx-10 lg:mx-24 min-h-screen">
+    <main class="mx-10 lg:mx-24 min-h-screen flex flex-col gap-8 mb-20">
+      <h2>{frontmatter.name} Plugin</h2>
+      {
+        frontmatter.usedPlugins && (
+          <div class="font-semibold text-xl">
+            Using plugin libraries: {frontmatter.usedPlugins.join(", ")}
+          </div>
+        )
+      }
       <slot />
     </main>
   </body>

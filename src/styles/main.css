@@ -20,6 +20,15 @@
   }
 
   h1 {
-    @apply text-2xl font-semibold
+    @apply text-4xl font-semibold;
   }
+
+  h2 {
+    @apply text-2xl font-bold
+  }
+}
+
+pre.astro-code {
+  padding: 1.5rem;
+  border-radius: 1rem;
 }

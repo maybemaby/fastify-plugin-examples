@@ -1,7 +1,21 @@
 ---
+import PluginPreview from "../components/PluginPreview.astro";
 import Layout from "../layouts/Default.astro";
+import type { PluginFrontMatter } from "../lib/types";
+
+const plugins = await Astro.glob<PluginFrontMatter>("./plugins/*.md");
 ---
 
 <Layout>
-  <p>Hello World</p>
+  <div class="mb-10 text-lg flex flex-row items-center">Filter</div>
+  <section
+    id="plugins"
+    class="flex flex-col items-center sm:flex-row flex-wrap gap-4"
+  >
+    {
+      plugins.map((plugin) => {
+        return <PluginPreview plugin={plugin.frontmatter} url={plugin.url} />;
+      })
+    }
+  </section>
 </Layout>
